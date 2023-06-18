@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin page{% endblock %}
+
+{% block body %}
+    <h1>Admin page</h1>
+
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Message</th>
+        </tr>
+
+        {% for message in pagination %}
+            <tr>
+                <td>{{ message.id }}</td>
+                <td>{{ message.message }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <div class="pagination">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
+{% endblock %}
