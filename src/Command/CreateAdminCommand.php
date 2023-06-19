@@ -34,7 +34,7 @@ class CreateAdminCommand extends Command
         $user = new User();
         $user->setUsername('admin');
         $user->setRoles(['ROLE_ADMIN']);
-        $hashedPassword = $this->passwordHasher->hashPassword($user, 'yourpassword');
+        $hashedPassword = $this->passwordHasher->hashPassword($user, 'password');
         $user->setPassword($hashedPassword);
 
         $this->entityManager->persist($user);
