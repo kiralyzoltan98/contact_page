@@ -15,10 +15,10 @@ security:
             form_login:
                 login_path: app_login
                 check_path: app_login
-                default_target_path: admin
+                default_target_path: admin_index
             logout:
                 path: app_logout
-                target: /
+                target: home
             pattern: ^/
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }

@@ -12,7 +12,7 @@ use Knp\Component\Pager\PaginatorInterface;
 #[Route('/admin', name: 'admin_')]
 class AdminController extends AbstractController
 {
-    #[Route('/', name: '_index', methods: ['GET'])]
+    #[Route('/', name: 'index', methods: ['GET'])]
     public function index(ContactRepository $messageRepository, PaginatorInterface $paginator, Request $request): Response
     {
         $query = $messageRepository->createQueryBuilder('m')->getQuery();
